@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pong !!!</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" type="module"></script>
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <!--Fav Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="manifest" href="img/site.webmanifest">
+    <!-- Font Awesome Kit -->
+    <script src="https://kit.fontawesome.com/6e5acc8382.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="line"></div>
+    <div class="wlcm-txt">WELCOME TO PONG!</div>
+    <div class="press-start">PRESS START</div>
+    <div class="score">
+        <div id="player-score">0</div>
+        <div id="computer-score">0</div>
+    </div>
+    <div class="ball" id="ball"></div>
+    <div class="paddle left" id="player-paddle"></div>
+    <div class="paddle right" id="computer-paddle"></div>
+    <div class="btn-menu">
+        <div class="btn" id="start-btn">START</div>
+        <div id="settings-btn" class="settings-btn btn">
+            <i class="fas fa-cog"></i>
+        </div>
+        <div id="theme-btn-dark" class="theme-btn dark btn">
+            <i class="fas fa-moon"></i>
+        </div>
+        <div id="theme-btn-light" class="theme-btn light btn">
+            <i class="fas fa-sun"></i>
+        </div>
+    </div>
+    <div class="settings" id="settings">
+        <div>
+            Style : <div class="styles rounded" id="rounded">Rounded</div>
+            <div class="styles squared" id="squared">Squared</div>
+        </div>
+        <div>
+            Color : <div class="color styles" id="bw">Colorrrs</div>
+            <div class="color styles" id="color">Black & White</div>
+        </div>
+        <div>
+            Sound : <i class="fas fa-volume-up styles" id="volume"></i>
+            <i class="fas fa-volume-mute styles" id="mute"></i>
+        </div>
+        <div class="back btn" id="back-btn">< BACK </div>
+    </div>
+</body>
+
+</html>

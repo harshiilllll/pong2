@@ -1,0 +1,236 @@
+:root{
+    --hue: 200;
+    --saturation: 50%;
+    --dark: 10%;
+    --light: 90%;
+    --foreground-color: hsl(var(--hue), var(--saturation), var(--light));
+    --background-color: hsl(var(--hue), var(--saturation), var(--dark));
+    --border-style: dashed;
+    --border-radius: 0px;
+}
+
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    background-color: var(--background-color);
+    overflow: hidden;
+    transition: .5s;
+}
+
+.paddle{
+    --position: 50;
+
+    position: absolute;
+    background-color: var(--foreground-color);
+    top: calc(var(--position) * 1vh);
+    transform: translateY(-50%);
+    width: 1.5vh; height: 13vh;
+    border-radius: var(--border-radius);
+}
+
+.paddle.left{
+    left: 1vw;
+}
+
+.paddle.right{
+    right: 1vw;
+}
+
+.ball{
+    --x: 50;
+    --y: 50;
+
+    position: absolute;
+    background-color: var(--foreground-color);
+    left: calc(var(--x) * 1vw);
+    top: calc(var(--y) * 1vh);
+    transform: translate(-50%, -50%);
+    width: 2.5vh; height: 2.5vh;
+    border-radius: var(--border-radius);
+}
+
+.score{
+    display: flex;
+    justify-content: center;
+    font-family: monospace;
+    font-size: 7vh;
+    font-weight: bold;
+    color: var(--foreground-color);
+    display: none;
+    margin-top: 2vh;
+}
+
+.score > *{
+    flex-grow: 1;
+    flex-basis: 0;
+    padding: 0 3vh;
+    margin: 1vh 0;
+    opacity: .8;
+}
+
+.score > :first-child{
+    text-align: right;
+    /* border-right: .5vh solid var(--foreground-color); */
+}
+
+.btn-menu{
+    position: absolute;
+    display: grid;
+    grid-template-columns: 1fr .2fr .2fr;
+    place-items: center;
+    top: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.btn{
+    width: 20vh;
+    background-color: var(--foreground-color);
+    color: var(--background-color);
+    padding: 2vh 3vh;
+    text-align: center;
+    letter-spacing: .2vh;
+    font-family: monospace;
+    font-size: 3vh;
+    font-weight: 900;
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.3);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: .1ms step-start;
+}
+
+.btn:hover{
+    box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.4);
+    transform: translateX(-5%) scale(1.06);
+}
+
+.settings-btn{
+    top: 90%;
+    width: 9vh;
+    text-align: center;
+}
+
+.theme-btn{
+    left: 40%;
+    top: 90%;
+    width: 9vh;
+    text-align: center;
+}
+
+.theme-btn.dark{
+    display: none;
+}
+
+.wlcm-txt{
+    text-align: center;
+    font-size: 7vh;
+    font-family: monospace;
+    color: var(--foreground-color);
+    font-weight: 900;
+    margin-top: 5vh;
+    animation: text 3s linear  infinite  ;
+}
+
+.press-start{
+    text-align: center;
+    font-size: 2vh;
+    font-family: monospace;
+    color: var(--foreground-color);
+    font-weight: 900;
+    letter-spacing: 2vh;
+    margin-top: 2vh;
+}
+
+.line{
+    height: 95vh;
+    width: 1vh;
+    border: 0;
+    border-left: 1vh solid var(--foreground-color);
+    border-style: var(--border-style);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: none;
+}
+
+.settings{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: var(--background-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-family: monospace;
+    color: var(--foreground-color);
+    font-size: 10vh;
+    flex-direction: column;
+    display: none;
+}
+
+.settings div{
+    display: flex;
+}
+
+.settings div .styles{
+    border-bottom: .5vh solid var(--foreground-color);
+    cursor: pointer;
+    margin-left: 2vh;
+    transition: .5s;
+}
+
+.styles:hover{
+    opacity: 0.7;
+}
+
+.styles.rounded{
+    display: none;
+}
+
+#color{
+    display: none;
+}
+
+.fas.styles{
+    border: none !important;
+}
+
+.fa-volume-mute{
+    margin-top: 1vh;
+    display: none;
+}
+
+.fa-volume-up{
+    display: block;
+    margin-top: 1vh;
+}
+
+.settings .back{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5vh;
+    width: auto;
+}
+
+.settings .back:hover{
+    transform: scale(1.06) translateY(-5%);
+}
+
+@keyframes text {
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.05);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
